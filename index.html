@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Adarsh A J — Game Developer Portfolio</title>
+<meta name="description" content="Adarsh A J - Unreal Engine Game Developer & Full-Stack Engineer portfolio" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-logo">A<span>J</span></div>
+    <div class="preloader-bar-track">
+      <div class="preloader-bar-fill" id="preloaderFill"></div>
+    </div>
+    <div class="preloader-text" id="preloaderText">LOADING WORLD... 0%</div>
+  </div>
+</div>
+
+<!-- ============ 3D BACKGROUND CANVAS ============ -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- ============ HUD NAV ============ -->
+<header class="hud-nav">
+  <div class="hud-left">
+    <span class="hud-tag">LVL</span>
+    <span class="hud-level" id="hudLevel">01</span>
+  </div>
+
+  <nav class="hud-nav-links" id="navLinks">
+    <a href="#home" class="nav-link active" data-section="home">Home</a>
+    <a href="#character" class="nav-link" data-section="character">Character</a>
+    <a href="#skills" class="nav-link" data-section="skills">Skill&nbsp;Tree</a>
+    <a href="#quests" class="nav-link" data-section="quests">Quest&nbsp;Log</a>
+    <a href="#games" class="nav-link" data-section="games">Game&nbsp;Library</a>
+    <a href="#achievements" class="nav-link" data-section="achievements">Achievements</a>
+    <a href="#connect" class="nav-link" data-section="connect">Connect</a>
+  </nav>
+
+  <div class="hud-right">
+    <button class="sound-toggle" id="soundToggle" title="Toggle SFX" aria-label="Toggle sound effects">??</button>
+    <button class="hud-burger" id="hudBurger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="section hero">
+  <div class="hero-grid-overlay"></div>
+
+  <div class="hero-content">
+    <p class="hero-kicker reveal">// PLAYER PROFILE LOADED</p>
+    <h1 class="hero-name reveal">
+      <span class="glitch" data-text="ADARSH A J">ADARSH A J</span>
+    </h1>
+    <p class="hero-role reveal">
+      <span id="typewriter"></span><span class="type-cursor">|</span>
+    </p>
+
+    <div class="hero-stats reveal">
+      <div class="stat">
+        <span class="stat-label">Creativity</span>
+        <div class="stat-bar"><div class="stat-fill" data-value="90"></div></div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Unreal Engine</span>
+        <div class="stat-bar"><div class="stat-fill" data-value="70"></div></div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Web Dev</span>
+        <div class="stat-bar"><div class="stat-fill" data-value="92"></div></div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Storytelling</span>
+        <div class="stat-bar"><div class="stat-fill" data-value="85"></div></div>
+      </div>
+    </div>
+
+    <div class="hero-cta reveal">
+      <a href="#quests" class="btn btn-primary">? START — View Quest Log</a>
+      <a href="#games" class="btn btn-ghost">?? Game Library</a>
+    </div>
+  </div>
+
+  <div class="hero-portrait reveal">
+    <div class="portrait-ring"></div>
+    <div class="portrait-ring ring-2"></div>
+    <img src="assets/adarsh.jpeg" alt="Adarsh A J" class="portrait-img" />
+    <div class="portrait-badge">Game Dev</div>
+  </div>
+
+  <a href="#character" class="scroll-cue" aria-label="Scroll down">
+    <span>SCROLL</span>
+    <div class="scroll-cue-line"></div>
+  </a>
+</section>
+
+<!-- ============ CHARACTER SHEET ============ -->
+<section id="character" class="section character-section">
+  <p class="section-kicker reveal">// 01 — CHARACTER SHEET</p>
+  <h2 class="section-title reveal">Who is Adarsh?</h2>
+
+  <div class="character-grid">
+    <div class="character-card reveal">
+      <div class="character-card-portrait">
+        <img src="assets/adarsh.jpeg" alt="Adarsh A J" />
+      </div>
+      <h3>ADARSH A J</h3>
+      <p class="character-class">Game Developer / Full-Stack Engineer</p>
+
+      <div class="character-xp">
+        <div class="character-xp-label"><span>LEVEL 5</span><span>XP 4,200 / 5,000</span></div>
+        <div class="stat-bar"><div class="stat-fill" data-value="84"></div></div>
+      </div>
+
+      <ul class="character-info-list">
+        <li><span>??</span> Thiruvananthapuram, Kerala, India</li>
+        <li><span>??</span> adarshunni3@gmail.com</li>
+        <li><span>??</span> +91 92079 87475</li>
+        <li><span>???</span> English · Malayalam · Hindi</li>
+      </ul>
+    </div>
+
+    <div class="character-bio reveal">
+      <p>
+        I'm a software developer leveling up into <strong>Unreal Engine game development</strong>.
+        Over the last few years I've shipped production web &amp; mobile products as a
+        frontend / full-stack engineer — and now I'm channeling that same discipline into building
+        gameplay systems, character movement, and interactive Blueprints inside Unreal Engine 5.
+      </p>
+      <p>
+        Right now I'm the <strong>Story Creator</strong> and a gameplay developer on
+        <em>Guardian of Ananthankadu</em>, an original 3D RPG set in the mystical forests of Kerala —
+        while also building <em>Soul Abductor</em>, a tense indie survival game. Off the clock,
+        you'll find me exploring 3D art, anime, and game design theory, always looking for the
+        next world worth building.
+      </p>
+      <div class="bio-tags">
+        <span class="tag">Unreal Engine 5</span>
+        <span class="tag">Blueprints</span>
+        <span class="tag">Narrative Design</span>
+        <span class="tag">React / Next.js</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">TypeScript</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILL TREE ============ -->
+<section id="skills" class="section skills-section">
+  <p class="section-kicker reveal">// 02 — SKILL TREE</p>
+  <h2 class="section-title reveal">Abilities Unlocked</h2>
+
+  <div class="skill-tree reveal">
+    <div class="skill-node skill-core">
+      <div class="skill-node-icon">??</div>
+      <h3>Unreal Engine 5</h3>
+      <p>Core specialization</p>
+    </div>
+
+    <div class="skill-branches">
+      <div class="skill-branch">
+        <h4>Game Systems</h4>
+        <div class="skill-chip-row">
+          <span class="skill-chip">Character Movement</span>
+          <span class="skill-chip">Game Mechanics Design</span>
+          <span class="skill-chip">Object / Interaction Blueprints</span>
+          <span class="skill-chip">Narrative &amp; Story Design</span>
+        </div>
+      </div>
+
+      <div class="skill-branch">
+        <h4>Programming</h4>
+        <div class="skill-chip-row">
+          <span class="skill-chip">JavaScript</span>
+          <span class="skill-chip">TypeScript</span>
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">Node.js</span>
+        </div>
+      </div>
+
+      <div class="skill-branch">
+        <h4>Web &amp; App Tech</h4>
+        <div class="skill-chip-row">
+          <span class="skill-chip">React JS / React Native</span>
+          <span class="skill-chip">Next JS</span>
+          <span class="skill-chip">Express JS</span>
+          <span class="skill-chip">MongoDB</span>
+          <span class="skill-chip">HTML / CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-branch">
+        <h4>Tools &amp; Workflow</h4>
+        <div class="skill-chip-row">
+          <span class="skill-chip">Git</span>
+          <span class="skill-chip">Jira</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUEST LOG / TIMELINE ============ -->
+<section id="quests" class="section quests-section">
+  <p class="section-kicker reveal">// 03 — QUEST LOG</p>
+  <h2 class="section-title reveal">Career Timeline</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <span class="timeline-date">Aug 2017 – Jul 2021</span>
+        <h3>?? Tutorial Island Completed</h3>
+        <p class="timeline-role">B.Tech, Computer Science &amp; Engineering</p>
+        <p class="timeline-desc">Vidya Academy of Science and Technology Technical Campus.</p>
+        <span class="xp-badge">XP +500</span>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <span class="timeline-date">Oct 2021 – Jul 2023</span>
+        <h3>?? Quest: First Contract</h3>
+        <p class="timeline-role">Frontend Developer — Ionaught Technologies Pvt Ltd</p>
+        <p class="timeline-desc">Built production frontend interfaces, honing component architecture and UI craftsmanship.</p>
+        <span class="xp-badge">XP +800</span>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <span class="timeline-date">Jul 2023 – May 2024</span>
+        <h3>?? Quest: Rising Ranks</h3>
+        <p class="timeline-role">Frontend Developer — GNX Digital Solutions Private Limited</p>
+        <p class="timeline-desc">Delivered client-facing web products, sharpening collaboration and delivery speed.</p>
+        <span class="xp-badge">XP +900</span>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <span class="timeline-date">Aug 2024 – Present</span>
+        <h3>?? Quest: Current Guild</h3>
+        <p class="timeline-role">Software Developer — Dcube AI</p>
+        <p class="timeline-desc">Building software solutions full-time while training in Unreal Engine on the side.</p>
+        <span class="xp-badge in-progress">IN PROGRESS</span>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot pulse"></div>
+      <div class="timeline-card highlight">
+        <span class="timeline-date">2026 – Present</span>
+        <h3>?? New Quest Unlocked: Guardian of Ananthankadu</h3>
+        <p class="timeline-role">Story Creator &amp; Gameplay Developer — Unreal Engine 5</p>
+        <p class="timeline-desc">Began development on an original 3D RPG set in the forests of Kerala — writing the story and building character movement &amp; game mechanics.</p>
+        <span class="xp-badge in-progress">IN DEVELOPMENT</span>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot pulse"></div>
+      <div class="timeline-card highlight">
+        <span class="timeline-date">Side Quest</span>
+        <h3>?? Side Quest: Soul Abductor</h3>
+        <p class="timeline-role">Gameplay &amp; Blueprint Developer — Unreal Engine</p>
+        <p class="timeline-desc">Crafting an indie adventure-survival game: escape the level before the Ghost catches you.</p>
+        <span class="xp-badge in-progress">IN DEVELOPMENT</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ GAME LIBRARY / PROJECTS ============ -->
+<section id="games" class="section games-section">
+  <p class="section-kicker reveal">// 04 — GAME LIBRARY</p>
+  <h2 class="section-title reveal">Featured Games</h2>
+
+  <div class="game-cards">
+    <article class="game-card tilt reveal">
+      <div class="game-card-art art-forest">
+        <span class="game-card-emoji">??</span>
+        <span class="status-badge">In Development</span>
+      </div>
+      <div class="game-card-body">
+        <h3>Guardian of Ananthankadu</h3>
+        <p class="game-card-tags">3D RPG · Unreal Engine 5 · 2026 – Present</p>
+        <p class="game-card-role">Role: Story Creator / Gameplay Developer</p>
+        <p>
+          An original 3D RPG set in the mystical forests of Kerala, blending local folklore
+          with immersive open-world exploration.
+        </p>
+        <ul class="game-card-list">
+          <li>Wrote and directed the game's story &amp; narrative world.</li>
+          <li>Developed the player Character Movement system.</li>
+          <li>Built core Game Mechanics for exploration and combat.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="game-card tilt reveal">
+      <div class="game-card-art art-ghost">
+        <span class="game-card-emoji">??</span>
+        <span class="status-badge">In Development</span>
+      </div>
+      <div class="game-card-body">
+        <h3>Soul Abductor</h3>
+        <p class="game-card-tags">Indie Adventure / Survival · Unreal Engine</p>
+        <p class="game-card-role">Role: Gameplay &amp; Blueprint Developer</p>
+        <p>
+          A tense indie adventure-survival game — reach the exit door of each level before
+          the pursuing Ghost catches you.
+        </p>
+        <ul class="game-card-list">
+          <li>Built core game mechanics for chase, pursuit &amp; level-escape logic.</li>
+          <li>Implemented interactive Object Blueprints for props &amp; triggers.</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+
+  <h3 class="side-quests-title reveal">Side Quests — Web &amp; App Projects</h3>
+  <div class="side-quest-grid">
+    <div class="side-quest-card reveal">
+      <h4>DMON <span class="sq-date">Aug 2024</span></h4>
+      <p>Web App</p>
+      <p>Designed the entire frontend architecture for a web app connected to IoT devices, displaying live device status.</p>
+    </div>
+    <div class="side-quest-card reveal">
+      <h4>Nazeel <span class="sq-date">Dec 2024</span></h4>
+      <p>Mobile App</p>
+      <p>Cross-platform React Native app for room booking in the UAE, supporting two languages.</p>
+    </div>
+    <div class="side-quest-card reveal">
+      <h4>TalentsHealth.com <span class="sq-date">2021 – 2022</span></h4>
+      <p>Web App</p>
+      <p>Frontend and parts of the backend (React JS, Node JS) for a healthcare professional platform in Australia.</p>
+    </div>
+    <div class="side-quest-card reveal">
+      <h4>frontendwarfare.com <span class="sq-date">Dec 2021</span></h4>
+      <p>Website</p>
+      <p>Component-based website frontend built using React JS.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACHIEVEMENTS ============ -->
+<section id="achievements" class="section achievements-section">
+  <p class="section-kicker reveal">// 05 — ACHIEVEMENTS</p>
+  <h2 class="section-title reveal">Unlocked Achievements</h2>
+
+  <div class="achievements-grid">
+    <div class="achievement-badge reveal">
+      <div class="badge-icon">??</div>
+      <h3>Unreal Engine Development</h3>
+      <p>EXR Gaming</p>
+    </div>
+    <div class="achievement-badge reveal">
+      <div class="badge-icon">??</div>
+      <h3>Introduction to Artificial Intelligence</h3>
+      <p>IBM</p>
+    </div>
+    <div class="achievement-badge reveal">
+      <div class="badge-icon">??</div>
+      <h3>B.Tech, Computer Science &amp; Engineering</h3>
+      <p>Vidya Academy of Science and Technology</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section id="connect" class="section connect-section">
+  <p class="section-kicker reveal">// 06 — MULTIPLAYER LOBBY</p>
+  <h2 class="section-title reveal">Let's Team Up</h2>
+  <p class="connect-sub reveal">Looking for an Unreal Engine developer who also ships solid full-stack products? Send an invite.</p>
+
+  <div class="connect-grid reveal">
+    <a href="mailto:adarshunni3@gmail.com" class="connect-card">
+      <span class="connect-icon">??</span>
+      <span class="connect-label">Email</span>
+      <span class="connect-value">adarshunni3@gmail.com</span>
+    </a>
+    <a href="tel:+919207987475" class="connect-card">
+      <span class="connect-icon">??</span>
+      <span class="connect-label">Phone</span>
+      <span class="connect-value">+91 92079 87475</span>
+    </a>
+    <a href="https://github.com/Adarshspidey" target="_blank" rel="noopener" class="connect-card">
+      <span class="connect-icon">??</span>
+      <span class="connect-label">GitHub</span>
+      <span class="connect-value">github.com/Adarshspidey</span>
+    </a>
+    <a href="https://www.linkedin.com/in/adarshunni/" target="_blank" rel="noopener" class="connect-card">
+      <span class="connect-icon">??</span>
+      <span class="connect-label">LinkedIn</span>
+      <span class="connect-value">linkedin.com/in/adarshunni</span>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>© <span id="year"></span> Adarsh A J — Built with HTML, CSS, JS &amp; Three.js. Press F to continue.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
