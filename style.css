@@ -602,9 +602,20 @@ img{ max-width:100%; display:block; }
 
 .skill-branches{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns:repeat(6, 1fr);
   gap:1.4rem;
   width:100%;
+}
+.skill-branch{ grid-column:span 2; }
+.skill-branch:nth-child(n+4){ grid-column:span 3; }
+
+@media (max-width: 1000px){
+  .skill-branches{ grid-template-columns:1fr 1fr; }
+  .skill-branch,
+  .skill-branch:nth-child(n+4){ grid-column:auto; }
+}
+@media (max-width: 640px){
+  .skill-branches{ grid-template-columns:1fr; }
 }
 .skill-branch{
   background:var(--panel);
